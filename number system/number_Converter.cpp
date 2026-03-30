@@ -74,6 +74,7 @@ string o2h(int n){
     int hex = o2d(n);
     return d2h(hex);
 }
+
 int h2d(string n){
     int ans = 0;
     int base = 1; 
