@@ -23,7 +23,7 @@ int main(){
 
     bool found = false;
     int num=0;
-    cout<<"found on: "<<endl;
+    cout<<"Found on: "<<endl;
     for(int i=0;i<n-1;i++){
         for(int j=1;j<n;j++){
             if(v[i]+v[j]==t){
@@ -34,7 +34,7 @@ int main(){
         }
     }
 
-    cout<<endl<<"Total pairs found: "<<num;
-
+    if(found == true) cout<<endl<<"Total pairs found: "<<num;
+    else cout<<"No pairs found";
     return 0;
 }
