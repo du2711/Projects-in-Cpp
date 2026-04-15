@@ -9,7 +9,7 @@ int main(){
     cout<<"Enter number of columns: ";
     cin>>c;
 
-    vector<vector<int>> arr(r,vector<int>(c));
+    int arr[r][c];
 
     cout<<"Enter your Matrix: "<<endl;
     for(int i=0;i<r;i++){
@@ -26,7 +26,7 @@ int main(){
         cout<<endl;
     }
 
-    vector<vector<int>> trans(c,vector<int>(r));
+    int trans[c][r];
     for(int i=0;i<r;i++){
         for(int j=0;j<c;j++){
             trans[j][i]=arr[i][j];
