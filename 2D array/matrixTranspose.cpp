@@ -26,18 +26,17 @@ int main(){
         cout<<endl;
     }
 
+    vector<vector<int>> trans(c,vector<int>(r));
     for(int i=0;i<r;i++){
         for(int j=0;j<c;j++){
-            int temp =arr[i][j];
-            arr[i][j]=arr[j][i];
-            arr[j][i]=temp;
+            trans[j][i]=arr[i][j];
         }
     }
 
     cout<<"Transposed Matrix: "<<endl;
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            cout<<arr[i][j]<<" ";
+    for(int i=0;i<c;i++){
+        for(int j=0;j<r;j++){
+            cout<<trans[i][j]<<" ";
         }
         cout<<endl;
     }
