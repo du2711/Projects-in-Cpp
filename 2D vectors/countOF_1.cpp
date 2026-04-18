@@ -1,7 +1,22 @@
 #include<iostream>
 #include<vector>
-#include<climits>
 using namespace std;
+
+int leftOneRow(vector<vector<int>> &v){
+    int r = v[0].size();
+    int c = v.size();
+    int maxOnesRow = -1;
+
+    int i=0,j=r-1;
+    while(i<c && j>=0){
+        if(v[i][j]== 1){
+            maxOnesRow=i;
+            j--;
+        }
+        else i++;
+    }
+    return maxOnesRow;
+}
 
 int oneInRow(vector<vector<int>> &v){
     int maxOne = 0;
@@ -36,7 +51,7 @@ int main(){
         }
     }
 
-    int result = oneInRow(vec);
+    int result = leftOneRow(vec);
     cout<<result<<endl;
     return 0;
 }
