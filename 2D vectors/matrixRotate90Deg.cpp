@@ -8,16 +8,14 @@ void swap(int &a,int &b){
     b=temp;
 }
 
-vector<vector<int>> transpose(vector<vector<int>> &v){
-    int r= v.size(),c=v[0].size();
-    vector<vector<int>> trans(c,vector<int>(r));
+void transpose(vector<vector<int>> &v){
+    int r= v.size();
 
     for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            trans[j][i] = v[i][j];
+        for(int j=i+1;j<r;j++){
+            swap(v[i][j],v[j][i]);
         }
     }
-    return trans;
 }
 
 vector<vector<int>> reverse(vector<vector<int>> &v){
@@ -58,7 +56,7 @@ int main(){
         cout<<endl;
     }
 
-    arr= transpose(arr);
+    transpose(arr);
     arr= reverse(arr);
     r = arr.size();
     c = arr[0].size();
