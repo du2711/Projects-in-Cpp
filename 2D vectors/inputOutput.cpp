@@ -18,7 +18,7 @@ int main(){
         }
     }
 
-    cout<<"Enterd Matrix is: "<<endl;
+    cout<<"Entered Matrix is: "<<endl;
     for(int i=0;i<r;i++){
         for(int j=0;j<c;j++){
             cout<<arr[i][j]<<" ";
