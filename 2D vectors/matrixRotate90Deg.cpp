@@ -57,7 +57,7 @@ int main(){
     }
 
     transpose(arr);
-    arr= reverse(arr);
+    arr = reverse(arr);
     r = arr.size();
     c = arr[0].size();
 
