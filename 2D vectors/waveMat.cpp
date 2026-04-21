@@ -5,14 +5,17 @@ using namespace std;
 void wave(vector<vector<int>> &v){
     for(int i=0;i<v.size();i++){
         if(i%2==0){
-            for(int j=0;j<v[0].size();j++){
+            for(int j=0;j<v[i].size();j++){
                 cout<<v[i][j]<<" ";
             }
         }
         else{
-            
+            for(int j=v[i].size()-1;j>=0;j--){
+                cout<<v[i][j]<<" ";
+            }
         }
     }
+    cout<<endl;
 }
 int main(){ 
     int r,c;
@@ -30,12 +33,10 @@ int main(){
         }
     }
 
-    cout<<"Entered Matrix is: "<<endl;
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            cout<<arr[i][j]<<" ";
-        }
-        cout<<endl;
-    }
+    cout<<"Waved Matrix is: "<<endl;
+    wave(arr);
+
+    
+    
     return 0;
 }
