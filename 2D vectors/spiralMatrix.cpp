@@ -29,6 +29,7 @@ int main(){
     int totalElement = r*c;
     int top=0,left=0,right=c-1,bottom=r-1;
 
+    cout<<"Spiraled Matrix is: ";
     while(top<=bottom &&  left<=right){
         for(int i=top;i<=right;i++){
             cout<<arr[top][i]<<" ";
