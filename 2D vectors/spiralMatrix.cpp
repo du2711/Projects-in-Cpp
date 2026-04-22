@@ -2,9 +2,6 @@
 #include<vector>
 using namespace std;
 
-vector<vector<int>> spiral(vector<vector<int>> &v){
-
-}
 int main(){ 
     int r,c;
     cout<<"Enter size of row: ";
@@ -21,7 +18,6 @@ int main(){
         }
     }
 
-    int totalElement = r*c;
     cout<<"Entered Matrix is: "<<endl;
     for(int i=0;i<r;i++){
         for(int j=0;j<c;j++){
@@ -30,37 +26,29 @@ int main(){
         cout<<endl;
     }
 
-    int minr=0,maxr=r-1,minc=0,maxc=c-1,count=0;
+    int totalElement = r*c;
+    int top=0,left=0,right=c-1,bottom=r-1;
 
-    while(count<totalElement){
-
-        for(int j=minc;j<maxc;j++){
-            cout<<arr[minr][j]<<" ";
-            count++;
+    while(top<=bottom &&  left<=right){
+        for(int i=top;i<=right;i++){
+            cout<<arr[top][i]<<" ";
         }
-        minr++;
-        if(totalElement>=count) break;
+        top++;
 
-        for(int i=minr;i<maxr;i++){
-            cout<<arr[i][maxc]<<" ";
-            count++;
+        for(int i=top;i<=bottom;i++){
+            cout<<arr[i][right]<<" ";
         }
-        minc--;
-        if(totalElement>=count) break;
+        right--;
 
-        for(int j=maxc;j>=minc;j--){
-            cout<<arr[maxr][j];
-            count++;
+        for(int i=right;i>=left;i--){
+            cout<<arr[bottom][i]<<" ";
         }
-        maxr--;
-        if(totalElement>=count) break;
+        bottom--;
 
-        for(int i=minc;i<maxr;i++){
-            cout<<arr[i][minc];
-            count++;
+        for(int i=bottom;i>=top;i--){
+            cout<<arr[i][left]<<" ";
         }
-        minc++;
-        if(totalElement>=count) break;
+        left++;
     }
 
     // HARCODED FOR 3*3 MATRIX
