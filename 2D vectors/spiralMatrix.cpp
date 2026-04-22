@@ -51,6 +51,7 @@ int main(){
         }
         left++;
     }
+    cout<<endl;
 
     // HARCODED FOR 3*3 MATRIX
     // cout<<"Spiraled Matrix is: ";
@@ -68,5 +69,6 @@ int main(){
     // for(int i=0;i<=1;i++){
     //     cout<<arr[i][1]<<" ";
     // }
+
     return 0;
 }
