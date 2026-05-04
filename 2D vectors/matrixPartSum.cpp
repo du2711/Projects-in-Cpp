@@ -2,6 +2,16 @@
 #include<vector>
 using namespace std;
 
+int sum(vector<vector<int>> v,int r1,int r2,int c1,int c2){
+    int sum=0;
+    for(int i=r1;i<=r2;i++){
+        for(int j=c1;j<=c2;j++){
+            sum=sum+v[i][j];
+        }
+    }
+    return sum;
+}
+
 int main(){ 
     int r,c;
     cout<<"Enter size of row: ";
@@ -26,18 +36,23 @@ int main(){
         cout<<endl;
     }
 
-    int left,right,top,bottom;
+    cout<<endl;
+    int r1,r2,c1,c2;
 
     cout<<"Enter starting row index: ";
-    cin>>left;
-
-    cout<<"Enter ending column index: ";
-    cin>>right;
+    cin>>r1;
 
     cout<<"Enter ending row index: ";
-    cin>>bottom;
+    cin>>r2;
 
-    
-    
+    cout<<"Enter starting column index: ";
+    cin>>c1;
+
+    cout<<"Enter ending column index: ";
+    cin>>c2;
+
+    int ans = sum(arr,r1,r2,c1,c2);
+    cout<<endl<<"Sum is: "<<ans;
+
     return 0;
 }
