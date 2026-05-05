@@ -2,6 +2,22 @@
 #include<vector>
 using namespace std;
 
+int preSum(vector<vector<int>> v,int r1,int r2,int c1,int c2){
+    for(int i=r1;i<=r2;i++){
+        for(int j=c1;j<=c2;j++){
+            v[i][j] = v[i][j] + v[i-1][j];
+        }
+    }
+
+    int sum=0;
+    for(int i=c1;i<=c2;i++){
+        if(c1!=0) sum+=v[i][c2]-v[i][c1-1];
+        else sum+=v[i][c2];
+    }
+
+    return sum;
+}
+
 int sum(vector<vector<int>> v,int r1,int r2,int c1,int c2){
     int sum=0;
     for(int i=r1;i<=r2;i++){
@@ -51,7 +67,8 @@ int main(){
     cout<<"Enter ending column index: ";
     cin>>c2;
 
-    int ans = sum(arr,r1,r2,c1,c2);
+    int ans = preSum(arr,r1,r2,c1,c2);
+
     cout<<endl<<"Sum is: "<<ans;
 
     return 0;
