@@ -3,14 +3,17 @@
 using namespace std;
 
 int preSum(vector<vector<int>> v,int r1,int r2,int c1,int c2){
-    for(int i=r1;i<=r2;i++){
-        for(int j=c1;j<=c2;j++){
-            v[i][j] = v[i][j] + v[i-1][j];
+    int rows=v.size();
+    int cols=v[0].size();
+
+    for(int i=0;i<rows;i++){
+        for(int j=1;j<cols;j++){
+            v[i][j] = v[i][j] + v[i][j-1];
         }
     }
 
     int sum=0;
-    for(int i=c1;i<=c2;i++){
+    for(int i=r1;i<=r2;i++){
         if(c1!=0) sum+=v[i][c2]-v[i][c1-1];
         else sum+=v[i][c2];
     }
