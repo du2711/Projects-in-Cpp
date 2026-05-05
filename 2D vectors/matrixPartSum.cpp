@@ -2,7 +2,7 @@
 #include<vector>
 using namespace std;
 
-int preSum(vector<vector<int>> v,int r1,int r2,int c1,int c2){
+int preSum(vector<vector<int>> &v,int r1,int r2,int c1,int c2){
     int rows=v.size();
     int cols=v[0].size();
 
@@ -12,11 +12,17 @@ int preSum(vector<vector<int>> v,int r1,int r2,int c1,int c2){
         }
     }
 
-    int sum=0;
-    for(int i=r1;i<=r2;i++){
-        if(c1!=0) sum+=v[i][c2]-v[i][c1-1];
-        else sum+=v[i][c2];
+    for(int i=1;i<rows;i++){
+        for(int j=0; j<cols; j++){
+            v[i][j]+=v[i-1][j];
+        }
     }
+
+    int total = v[r2][c2];
+    int top = (r1>0) ? v[r1-1][c2] : 0;
+    int left = (c1 > 0) ? v[r2][c1 - 1] : 0;
+    int topLeft = (r1 > 0 && c1 > 0) ? v[r1 - 1][c1 - 1] : 0;
+    int sum = total-top-left+topLeft;
 
     return sum;
 }
