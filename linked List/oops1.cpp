@@ -14,5 +14,10 @@ int main(){
     apple.name="Apple";
     apple.color="Red";
 
+    fruit *mango= new fruit();
+    mango->color="Mango";
+    mango->name="yellow";
+
+    cout<<apple.name<<" "<<mango->name;
     return 0;
 }
