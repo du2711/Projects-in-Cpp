@@ -37,6 +37,37 @@ This repository contains my C++ practice programs covering fundamental concepts 
 
 - Different pattern problems using loops
 
+🔹 Arrays
+
+- Binary search and Linear search
+- Array rotation and manipulation
+- Prefix sum and sub-array sums
+- Finding unique elements and palindromes
+
+🔹 2D Arrays & Matrices
+
+- Matrix multiplication and transpose
+- Spiral matrix generation and printing
+- Pascal's triangle
+- 90-degree matrix rotation
+
+🔹 Vectors
+
+- Basic vector operations
+- Last occurrence and sorting checks
+- Odd-even index difference
+
+🔹 Functions
+
+- Pass by reference and value
+- Swap functions
+
+🔹 Linked Lists & OOPs
+
+- Classes and Constructors
+- Encapsulation concepts
+- Basic Linked List implementation
+
 ---
 
 🚀 Purpose
