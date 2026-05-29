@@ -18,6 +18,10 @@ void reverse(int arr[],int s,int e){
     }
 }
 
+int xor_(int a,int b){
+    return (a&b) - (a|b);
+}
+
 bool pali(int a){
     int origin=a;
     int rev=0,remain=0;
@@ -36,4 +40,20 @@ int main(){
     if(pali(a)) cout<<"Pali";
     else cout<<"not pali";
     return 0;
+
+    cout<<endl;
+
+    int p=4,q=5;
+    int c=p^q;
+
+    cout<<xor_(4,5);
+    cout<<endl<<c;
+
+
+    int n=4,m=5;
+    int z=n^m;
+    cout<<" "<<z;
+
+    return 0;
+
 }
