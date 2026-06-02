@@ -35,6 +35,19 @@ bool pali(int a){
     else return false;
 }
 
+int matrix_multiply(vector<vector<int>> arr,vector<vector<int>> brr){
+    vector<vector<int>> prod;
+    for(int i=0;i<arr.size();i++){
+        for(int j=0;i<brr.size();j++){
+            prod[i][j]=0;
+            for(int k=0;k<prod.size();k++){
+                prod[i][j]*=arr[i][k]+brr[k][j];
+            }
+        }
+    }
+    return prod;
+}
+
 int main(){ 
     int a=12321;
     if(pali(a)) cout<<"Pali";
@@ -43,16 +56,40 @@ int main(){
 
     cout<<endl;
 
-    int p=4,q=5;
-    int c=p^q;
+    // int p=4,q=5;
+    // int c=p^q;
 
-    cout<<xor_(4,5);
-    cout<<endl<<c;
+    // cout<<xor_(4,5);
+    // cout<<endl<<c;
+
+    // int n=4,m=5;
+    // int z=n^m;
+    // cout<<" "<<z;
+    int r=3,c=3;
+    vector<vector<int>> arr[r][c],brr[r][c];
+
+    cout<<"enter a:";
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            cin>>arr[i][j];
+        }
+    }
+
+    cout<<endl<<"Enter b: ";
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            cin>>brr[i][j];
+        }
+    }
+
+    int res[r][c];
+    for(int i=0;i<r;i++){
+        for(int j=0;j<c;j++){
+            res[i][j]=matrix_multiply(arr,brr);
+        }
+    }
 
 
-    int n=4,m=5;
-    int z=n^m;
-    cout<<" "<<z;
 
     return 0;
 
