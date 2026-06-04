@@ -19,7 +19,7 @@ void reverse(int arr[],int s,int e){
 }
 
 int xor_(int a,int b){
-    return (a&b) - (a|b);
+    return (a|b) - (a&b);
 }
 
 bool pali(int a){
@@ -35,26 +35,37 @@ bool pali(int a){
     else return false;
 }
 
-int matrix_multiply(vector<vector<int>> arr,vector<vector<int>> brr){
-    vector<vector<int>> prod;
+vector<vector<int>> matrix_multiply(vector<vector<int>> arr,vector<vector<int>> brr){
+    vector<vector<int>> prod(arr.size(),vector<int>(brr[0].size(),0));
     for(int i=0;i<arr.size();i++){
         for(int j=0;i<brr.size();j++){
             prod[i][j]=0;
-            for(int k=0;k<prod.size();k++){
-                prod[i][j]*=arr[i][k]+brr[k][j];
+            for(int k=0;k<arr[0].size();k++){
+                prod[i][j]+=arr[i][k]*brr[k][j];
             }
         }
     }
     return prod;
 }
 
-int main(){ 
-    int a=12321;
-    if(pali(a)) cout<<"Pali";
-    else cout<<"not pali";
-    return 0;
+void fibonacci(int n){
+    int a=0;
+    int b=1;
 
-    cout<<endl;
+    for(int i=1;i<=n;i++){
+        cout<<a<<" ";
+        int temp=a;
+        a=b;
+        b=temp+a;
+    }
+}
+
+int main(){ 
+    // int a=12321;
+    // if(pali(a)) cout<<"Pali";
+    // else cout<<"not pali";
+
+    // cout<<endl;
 
     // int p=4,q=5;
     // int c=p^q;
@@ -65,32 +76,12 @@ int main(){
     // int n=4,m=5;
     // int z=n^m;
     // cout<<" "<<z;
-    int r=3,c=3;
-    vector<vector<int>> arr[r][c],brr[r][c];
+    // int r=3,u=3;
 
-    cout<<"enter a:";
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            cin>>arr[i][j];
-        }
-    }
+    // vector<vector<int>> arr(r,vector<int>(c));
+    // vector<vector<int>> brr(r,vector<int>(c));
 
-    cout<<endl<<"Enter b: ";
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            cin>>brr[i][j];
-        }
-    }
-
-    int res[r][c];
-    for(int i=0;i<r;i++){
-        for(int j=0;j<c;j++){
-            res[i][j]=matrix_multiply(arr,brr);
-        }
-    }
-
-
-
+    fibonacci(10);
     return 0;
 
 }
