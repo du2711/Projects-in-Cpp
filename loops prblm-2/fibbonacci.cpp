@@ -1,0 +1,23 @@
+#include<iostream>
+#include<vector>
+using namespace std;
+
+void fibonacci(int n){
+    int a=0,b=1;
+    for(int i=1;i<=n;i++){
+        cout<<a<<" ";
+        int temp=a;
+        a=b;
+        b=a+temp;
+    }
+}
+
+int main(){ 
+    int n;
+    cout<<"Enter n: ";
+    cin>>n;
+
+    fibonacci(n);
+
+    return 0;
+}
