@@ -2,15 +2,15 @@
 #include<vector>
 using namespace std;
 
-int fact(int n){
-    if(n==1||n<0) return 1;
-    else return n*fact(n-1);
+int sum(int n){
+    if (n==0) return 0;
+    else return n+sum(n-1);
 }
 
 int main(){ 
     int n;
     cout<<"Enter n: ";
     cin>>n;
-    cout<<fact(n);
+    cout<<sum(n);
     return 0;
 }
