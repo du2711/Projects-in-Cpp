@@ -2,12 +2,40 @@
 #include<vector>
 using namespace std;
 
-bool p2(int a){
-    return (a&(a-1))==0 && (a-1)%7==0;
+int unique(int arr[],int n){
+    int unique=0;
+    for(int i=0;i<n;i++){
+        unique=unique^arr[i];
+    }
+    return unique;
 }
 
 void swap(int &i,int &j){
     int temp=i;i=j;j=temp;
+}
+
+void sort(int arr[],int n){
+    for(int i=0;i<n;i++){
+        for(int j=i+1;j<n;j++){
+            if(arr[i]>arr[j]){
+                swap(arr[i],arr[j]);
+            }
+        }
+    }
+}
+
+void duplicate(int arr[],int n){
+    sort(arr,n);
+    for(int i=0;i<n;i++){
+        if(arr[i]==arr[i+1]){
+            cout<<"Found at index "<<i<<" and "<<i+1<<" as "<< arr[i];
+            cout<<endl;
+        }
+    }
+}
+
+bool p2(int a){
+    return (a&(a-1))==0 && (a-1)%7==0;
 }
 
 void reverse(int arr[],int s,int e){
@@ -81,7 +109,20 @@ int main(){
     // vector<vector<int>> arr(r,vector<int>(c));
     // vector<vector<int>> brr(r,vector<int>(c));
 
-    fibonacci(10);
+    int n;
+    cout<<"Enter number of elements: ";
+    cin>>n;
+
+    int arr[n];
+    cout<<"Enter array: ";
+    for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+
+    int u=unique(arr,n);
+
+    cout<<"unique element is: "<<u;
+
     return 0;
 
 }
