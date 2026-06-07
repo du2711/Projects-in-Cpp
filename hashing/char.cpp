@@ -1,33 +1,28 @@
 #include<iostream>
-#include<vector>
+#include<cctype>
 using namespace std;
 
-int hashh[256];
 int main(){ 
-    int n;
-    cout<<"Enter size of array: ";
-    cin>>n;
+    string s;
+    cout<<"Enter string: ";
+    cin>>s;
 
-    char arr[n];
-    cout<<"Enter your elements: ";
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
-        arr[i]=arr[i]-'a';
-    }
+    int hashFreq[26]={0};
 
-    for(int i=0;i<n;i++){
-        hashh[i]=char(arr[i]+1);
+    for(int i=0;i<s.size();i++){
+        hashFreq[s[i]-'a']++;
     }
 
     int q;
     cout<<"Enter no. of queries: ";
     cin>>q;
-
     while(q--){
-        int num;
+        char num;
         cout<<"Enter query: ";
         cin>>num;
-        cout<<hashh[num];
+        num = tolower(num);
+        cout<<hashFreq[num-'a'];
+        cout<<endl;
     }
     return 0;
 }
