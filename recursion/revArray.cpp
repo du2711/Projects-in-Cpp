@@ -13,7 +13,6 @@ void rev(vector<int> &arr,int s,int e){
     else{
         swap(arr[s],arr[e]);
         rev(arr,s+1,e-1);
-        s++,e--;
     }
 }
 
