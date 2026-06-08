@@ -11,7 +11,9 @@ int unique(int arr[],int n){
 }
 
 void swap(int &i,int &j){
-    int temp=i;i=j;j=temp;
+    int temp=i;
+    i=j;
+    j=temp;
 }
 
 void sort(int arr[],int n){
