@@ -36,13 +36,12 @@ int main(){
     for(int i=0;i<n;i++){
         cout<<arr[i]<<" ";
     }
-
+    
     sort01(arr);
-
+    
     cout<<endl<<"Sorted array is: ";
-    for(int i=0;i<n;i++){
-        cout<<arr[i]<<" ";
+    for(int ele: arr){
+        cout<<ele<<" ";
     }
-
     return 0;
 }
