@@ -6,33 +6,43 @@ void mergeArray(vector<int> &arr,vector<int> &brr){
     int n=arr.size();
     int m=brr.size();
 
-    vector<int> resArr(n+m);
+    // vector<int> resArr(n+m);
 
-    int left=0,right=0;
-    int idx=0;
+    // int left=0,right=0;
+    // int idx=0;
 
-    while(left<n && right<m){
-        if(arr[left]<=brr[right]){
-            resArr[idx] = arr[left];
-            left++,right++;
+    // while(left<n && right<m){
+    //     if(arr[left]<=brr[right]){
+    //         resArr[idx] = arr[left];
+    //         left++,right++;
+    //     }
+    //     else{
+    //         resArr[idx]=brr[right];
+    //         right++,idx++;
+    //     }
+    // }
+
+    // while(left<n){
+    //     resArr[idx++]=arr[left++];
+    // }
+
+    // while(right<m){
+    //     resArr[idx++]=brr[right++];
+    // }
+
+    // for(int i=0;i<n+m;i++){
+    //     if(i<n) arr[i]=resArr[i];
+    //     else brr[i-n]=resArr[i];
+    // }
+
+    int left=n-1;
+    int right=m-1;
+    while(left>=0 && right<m){
+        if(arr[left]>brr[right]){
+            swap(arr[left],brr[right]);
+            left--,right++;
         }
-        else{
-            resArr[idx]=brr[right];
-            right++,idx++;
-        }
-    }
-
-    while(left<n){
-        resArr[idx++]=arr[left++];
-    }
-
-    while(right<m){
-        resArr[idx++]=brr[right++];
-    }
-
-    for(int i=0;i<n+m;i++){
-        if(i<n) arr[i]=resArr[i];
-        else brr[i-n]=resArr[i];
+        else break;
     }
 }
 
