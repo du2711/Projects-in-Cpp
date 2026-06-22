@@ -4,7 +4,7 @@ using namespace std;
 
 int sumDigit(int n){
     if(n>0 && n<10) return n;
-    else 
+    else return (n%10)+ sumDigit(n/10);
 }
 
 int main(){ 
