@@ -2,22 +2,21 @@
 #include<vector>
 using namespace std;
 
-void printArr(vector<int> &arr,int idx,int n){
-    if(idx==n) return;
+void printArr(vector<int> &arr,int idx){
+    if(idx==arr.size()) return;
     cout<<arr[idx]<<" " ;
-    printArr(arr,idx+1,n);
+    printArr(arr,idx+1);
 }
 
 int main(){ 
-    int n;
-    cout<<"Enter n: ";
-    cin>>n;
+    // int n;
+    // cout<<"Enter n: ";
+    // cin>>n;
 
     vector<int> arr;
-    cout<<"Enter array: ";
-    for(int i=0;i<n;i++){
-        int ele;
-        cin>>ele;
+    int ele;
+    cout<<"Enter array (Press enter to stop): ";
+    while(cin.peek() !='\n' && cin>>ele){
         arr.push_back(ele);
     }
 
@@ -27,6 +26,6 @@ int main(){
     }
 
     cout<<endl;
-    printArr(arr,0,n);
+    printArr(arr,0);
     return 0;
 }
