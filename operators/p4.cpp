@@ -2,6 +2,12 @@
 #include<vector>
 using namespace std;
 
+bool strPal(string &str,int i){
+    if(i>=str.length()/2) return true;
+    if(tolower(str[i]) != tolower(str[str.length()-1])) return true;
+    else return strPal(str,i+1);
+}
+
 int unique(int arr[],int n){
     int unique=0;
     for(int i=0;i<n;i++){
@@ -111,19 +117,22 @@ int main(){
     // vector<vector<int>> arr(r,vector<int>(c));
     // vector<vector<int>> brr(r,vector<int>(c));
 
-    int n;
-    cout<<"Enter number of elements: ";
-    cin>>n;
+    // int n;
+    // cout<<"Enter number of elements: ";
+    // cin>>n;
 
-    int arr[n];
-    cout<<"Enter array: ";
-    for(int i=0;i<n;i++){
-        cin>>arr[i];
-    }
+    // int arr[n];
+    // cout<<"Enter array: ";
+    // for(int i=0;i<n;i++){
+    //     cin>>arr[i];
+    // }
 
-    int u=unique(arr,n);
+    // int u=unique(arr,n);
 
-    cout<<"unique element is: "<<u;
+    // cout<<"unique element is: "<<u;
+
+    string str = "Madam";
+    cout<<strPal(str,0);
 
     return 0;
 
