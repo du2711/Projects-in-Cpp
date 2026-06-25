@@ -58,10 +58,10 @@ int xor_(int a,int b){
     return (a|b) - (a&b);
 }
 
-bool pali(int a,int *temp){
+bool pali(int a,int &temp){
     if(a==0) return true;
-    bool result = pali(a,temp) && (a%10)==(*temp)%10;
-    *temp/=10;
+    bool result = pali(a/10,temp) && (a%10)==(temp)%10;
+    temp/=10;
     return result;
 }
 
@@ -128,7 +128,11 @@ int main(){
     // string str = "Madam";
     // cout<<strPal(str,0);
 
-    
+    int n=1232;
+
+    int temp =n;
+
+    cout<<pali(n,temp);
 
     return 0;
 
