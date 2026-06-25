@@ -2,10 +2,14 @@
 #include<vector>
 using namespace std;
 
+// 1-2+3-4+5-6+7-8........................
+
 int recursiveSum(int n){
-    if(n==0) return n;
+    int odd=0,even=0;
+    if(n==0) return 0;
     else{
-        if(n%2==0)
+        if(n%2==0) return recursiveSum(n-1) -n;
+        else return recursiveSum(n-1) +n;
     }
 }
 
@@ -25,6 +29,6 @@ int main(){
     cout<<"Enter n: ";
     cin>>n;
 
-    cout<<iterationSum(n);
+    cout<<recursiveSum(n);
     return 0;
 }
