@@ -58,17 +58,11 @@ int xor_(int a,int b){
     return (a|b) - (a&b);
 }
 
-bool pali(int a){
-    int origin=a;
-    int rev=0,remain=0;
-
-    while(a>0){
-        remain=a%10;
-        rev=(rev*10)+remain;
-        a/=10;
-    }
-    if(rev==origin) return true;
-    else return false;
+bool pali(int a,int *temp){
+    if(a==0) return true;
+    bool result = pali(a,temp) && (a%10)==(*temp)%10;
+    *temp/=10;
+    return result;
 }
 
 vector<vector<int>> matrix_multiply(vector<vector<int>> arr,vector<vector<int>> brr){
@@ -131,8 +125,10 @@ int main(){
 
     // cout<<"unique element is: "<<u;
 
-    string str = "Madam";
-    cout<<strPal(str,0);
+    // string str = "Madam";
+    // cout<<strPal(str,0);
+
+    
 
     return 0;
 
