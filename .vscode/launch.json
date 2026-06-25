@@ -2,14 +2,28 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Debug C++",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${fileDirname}\\${fileBasenameNoExtension}.exe",
+      "args": [],
+      "stopAtEntry": false,
+      "cwd": "${fileDirname}",
+      "environment": [],
+      "externalConsole": true,
+      "MIMode": "gdb",
+      "miDebuggerPath": "C:/MinGW/bin/gdb.exe",
+      "preLaunchTask": "build"
+    },
+    {
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "d:/C++/recursion",
-      "program": "d:/C++/recursion/build/Debug/outDebug",
+      "cwd": "d:/C++/operators",
+      "program": "d:/C++/operators/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "C:/MinGW/bin/gdb.exe",
       "setupCommands": [
