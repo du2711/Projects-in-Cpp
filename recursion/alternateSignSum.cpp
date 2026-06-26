@@ -7,10 +7,7 @@ using namespace std;
 int recursiveSum(int n){
     int odd=0,even=0;
     if(n==0) return 0;
-    else{
-        if(n%2==0) return recursiveSum(n-1) -n;
-        else return recursiveSum(n-1) +n;
-    }
+    return recursiveSum(n-1) + ((n%2==0) ? (-n):(n));
 }
 
 int iterationSum(int n){
