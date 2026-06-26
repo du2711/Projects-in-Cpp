@@ -2,6 +2,16 @@
 #include<vector>
 using namespace std;
 
+int gdc(int a,int b){
+    int rem;
+    while(b!=0){
+        int rem=a%b;
+        a=b;
+        b=rem;
+    }
+    return a;
+}
+
 int hcf(int a,int b){
     // using euclid's algo
     // ----using division method
@@ -17,7 +27,7 @@ int main(){
     cout<<"Enter second number: ";
     cin>>b;
 
-    cout<<hcf(a,b);
+    cout<<gdc(a,b);
 
     return 0;
 }
