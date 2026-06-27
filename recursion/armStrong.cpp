@@ -2,8 +2,13 @@
 #include<vector>
 using namespace std;
 
-int arm(int a){
-    
+int digits(int a){
+    int digit=0;
+    while(a>0){
+        digit++;
+        a/=10;
+    }
+    return digit;
 }
 
 int power(int a,int b){
@@ -14,17 +19,20 @@ int power(int a,int b){
     else return a*half*half;
 }
 
+int arm(int a,int digit){
+    if(a==0) return 0;
+    else return power(a%10,digit) + arm(a/10,digit);
+}
+bool armst(int a){
+    int digit = digits(a);
+    return a==arm(a,digit);
+}
+
 bool armstrong(int a){
     int arm=a;
-    int digit=0;
-
     int temp=a;
     
-    // if(a==0) digit = 1;
-    while(temp!=0){
-        digit++;
-        temp/=10;
-    }
+    int digit= digits(a);
 
     int sum=0;
     while(a!=0){
@@ -42,7 +50,7 @@ int main(){
     cout<<"Enter your number: ";
     cin>>a;
 
-    if(armstrong(a)) cout<<"This number is armstrong";
+    if(armst(a)) cout<<"This number is armstrong";
     else cout<<"Not armstrong number";
 
     return 0;
