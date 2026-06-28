@@ -9,9 +9,21 @@ int linearSearch(vector<int> &arr,int idx,int target){
 }
 
 int main(){ 
-    vector<int> arr={10,20,30,40};
-    int t=30;
+    vector<int> arr;
+
+    cout<<"Enter array: ";
+    int ele;
+    while(cin.peek()!='\n' && cin>>ele){
+        arr.push_back(ele);
+    }
+    
+    int t;
+    cout<<"Enter target: ";
+    cin>>t;
+
     cout<<"Found on index: ";
+    
     cout<<linearSearch(arr,0,t);
+
     return 0;
 }
