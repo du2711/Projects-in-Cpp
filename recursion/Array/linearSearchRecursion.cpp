@@ -3,7 +3,7 @@
 using namespace std;
 
 int linearSearch(vector<int> &arr,int idx,int target){
-    if(idx==arr.size()) return 0;
+    if(idx==arr.size()) return -1;
     if (arr[idx]==target) return idx;
     return linearSearch(arr,idx+1,target);
 }
@@ -21,9 +21,14 @@ int main(){
     cout<<"Enter target: ";
     cin>>t;
 
-    cout<<"Found on index: ";
-    
-    cout<<linearSearch(arr,0,t);
+    int res = linearSearch(arr,0,t);
+
+    if(res==-1){
+        cout<<"Element not found";
+    }
+    else{
+        cout<<"Element found on Index: "<<res;
+    }
 
     return 0;
 }
