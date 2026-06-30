@@ -2,6 +2,14 @@
 #include<vector>
 using namespace std;
 
+void subset(vector<int> &arr,int idx,int sum,vector<int> &result){
+    if(idx==arr.size()){
+        result.push_back(sum);
+        return;
+    }
+    subset(arr,idx+1,sum+arr[idx],result);
+    subset(arr,idx+1,sum,result);
+}
 
 int main(){ 
     vector<int> arr;
@@ -10,14 +18,11 @@ int main(){
         arr.push_back(ele);
     }
 
-    for(int i=0;i<arr.size();i++){
-        for(int j=i+1;j<arr.size();j++){
-            if(i!=j){
-                cout<<'0'<<" "<<arr[i]<<" "<<arr[j];
-                cout<<" "<<arr[i]+arr[j]<<" ";
-            }
-        }
+    vector<int> res; 
+    subset(arr,0,0,res);
+
+    for(int ele : res){
+        cout<<ele<<" ";
     }
-    
     return 0;
 }
