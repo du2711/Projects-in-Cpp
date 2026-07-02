@@ -34,3 +34,18 @@ int main(){
     cout<<"Total Ways: "<<ways;
     return 0;
 }
+
+// int maze(int cr,int cc,int er,int ec){
+//         if(cr==er && cc==ec) return 1;
+
+//         int rightWays=0;
+//         int downWays=0;
+
+//         if(cc<ec) rightWays = maze(cr,cc+1,er,ec);
+//         if(cr<er) downWays =  maze(cr+1,cc,er,ec);
+
+//         return rightWays+downWays;
+//     }
+//     int uniquePaths(int m,int n) {
+//         return maze(0,0,m-1,n-1);
+//     }
